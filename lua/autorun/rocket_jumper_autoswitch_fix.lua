@@ -1,5 +1,6 @@
 -- Rocket Jumper Auto-Switch Fix
 -- Prevents automatically switching to the rocket jumper when acquired
+-- Credit: Snuffles the Fox
 
 if SERVER then
     AddCSLuaFile()

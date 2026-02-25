@@ -1,3 +1,7 @@
+-- CS:GO Knife Sounds
+-- Registers CSGO knife sounds
+-- Credit: Snuffles the Fox
+
 sound.Add( {
 	name = "csgo_knife.Deploy",
 	channel = CHAN_WEAPON,

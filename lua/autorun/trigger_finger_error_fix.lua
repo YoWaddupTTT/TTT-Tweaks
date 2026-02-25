@@ -1,4 +1,6 @@
 -- Fix for the Nick() error in sv_traitor_chip.lua
+-- Credit: Snuffles the Fox
+
 hook.Add("InitPostEntity", "TriggerFingerChip_ErrorFix", function()
     if SERVER then
         local originalDoDamage = hook.GetTable()["EntityTakeDamage"]["traitorchip_damage"]

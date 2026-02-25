@@ -2,6 +2,7 @@
 -- Fixes two NULL entity errors in TTT2's marker_vision library:
 -- 1. markerVision.Remove: "Tried to use a NULL entity!" when removing EFlags
 -- 2. markerVision.Add: "Tried to use a NULL entity!" when adding EFlags
+-- Credit: Snuffles the Fox
 
 if SERVER then
     AddCSLuaFile()

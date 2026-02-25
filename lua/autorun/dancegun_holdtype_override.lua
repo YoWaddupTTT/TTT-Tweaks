@@ -1,3 +1,7 @@
+-- Dance Gun Holdtype Override
+-- This ensures the dance gun uses the "revolver" holdtype animation instead of pistol
+-- Credit: Snuffles the Fox
+
 -- Wait until the game is fully initialized
 hook.Add("InitPostEntity", "DanceGun_HoldTypeOverride", function()
     -- Small delay to ensure the weapon is fully registered

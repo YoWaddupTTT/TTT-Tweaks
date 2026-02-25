@@ -1,5 +1,6 @@
 -- TTT Laser Huge Attribution Fix
 -- This fixes the damage attribution for the Laser Huge weapon's projectiles
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Define the damage multiplier locally (copied from original code)

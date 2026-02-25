@@ -1,5 +1,6 @@
 -- Fix for Pack-a-Punch Prop Disguiser to remove taunt sounds
 -- This keeps the infinite timer but eliminates the noise
+-- Credit: Snuffles the Fox
 
 -- Direct hook to intercept weapon pickup
 hook.Add("WeaponEquip", "SilentPAPDisguiser", function(weapon, owner)

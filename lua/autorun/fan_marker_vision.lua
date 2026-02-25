@@ -1,5 +1,6 @@
 -- Fan Marker Vision Integration
 -- Replaces the fan's custom text display with TTT2's marker vision while keeping the range line
+-- Credit: Snuffles the Fox
 
 if SERVER then
     AddCSLuaFile()

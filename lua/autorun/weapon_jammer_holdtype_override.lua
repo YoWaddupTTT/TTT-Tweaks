@@ -1,5 +1,6 @@
 -- Weapon Jammer HoldType Fix
 -- This ensures the jammer uses the "normal" holdtype animation instead of pistol
+-- Credit: Snuffles the Fox
 
 -- Common function for both client and server
 local function FixJammerHoldType(weapon)

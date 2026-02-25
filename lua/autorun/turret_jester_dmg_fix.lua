@@ -1,5 +1,6 @@
 -- TTT Turret Jester Fix
 -- This prevents turrets placed by players on TEAM_JESTER from damaging other players
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Wait until the game is fully loaded

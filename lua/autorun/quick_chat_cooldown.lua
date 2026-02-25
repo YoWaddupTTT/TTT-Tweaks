@@ -1,5 +1,6 @@
 -- Quick chat cooldown system
 -- Prevents radio command spam by enforcing a 10 second cooldown
+-- Credit: Snuffles the Fox
 
 if CLIENT then
     local lastRadioTime = 0

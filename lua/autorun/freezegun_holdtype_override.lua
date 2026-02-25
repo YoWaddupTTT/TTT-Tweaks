@@ -1,3 +1,7 @@
+-- Freezegun Holdtype Override
+-- This ensures the Freezegun uses the "revolver" holdtype animation instead of pistol
+-- Credit: Snuffles the Fox
+
 -- Wait until the game is fully initialized
 hook.Add("InitPostEntity", "FreezeGun_HoldTypeOverride", function()
     -- Small delay to ensure the weapon is fully registered

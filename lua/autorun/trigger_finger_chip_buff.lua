@@ -1,5 +1,6 @@
 -- Trigger Finger Chip Buff
 -- Improves the Trigger Finger Chip weapon with additional features
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Network string for communicating chip-controlled kills to clients

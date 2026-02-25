@@ -1,5 +1,6 @@
 -- LaserHuge HoldType Fix
 -- This fixes the holdtype for the LaserHuge weapon to use crossbow animations
+-- Credit: Snuffles the Fox
 
 -- Common parts shared between client and server
 local function SetLaserHoldType(weapon)

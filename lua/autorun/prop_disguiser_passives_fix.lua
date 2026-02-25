@@ -3,6 +3,7 @@
 -- 1. Lost passive items when undisguising
 -- 2. Weapon breaking if player dies while disguised
 -- 3. Message spam to dead players
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Storage for player passives and prop tracking

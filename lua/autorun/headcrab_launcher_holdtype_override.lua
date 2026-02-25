@@ -1,5 +1,6 @@
 -- Headcrab Launcher HoldType Fix
 -- This ensures the headcrab launcher uses the "revolver" holdtype animation instead of pistol
+-- Credit: Snuffles the Fox
 
 -- Common function for both client and server
 local function FixHeadcrabHoldType(weapon)

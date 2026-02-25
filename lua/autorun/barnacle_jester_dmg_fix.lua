@@ -1,5 +1,6 @@
 -- TTT2 Barnacle Jester Fix
 -- This prevents barnacles placed by players on TEAM_JESTER from damaging other players
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Track barnacles and their owners

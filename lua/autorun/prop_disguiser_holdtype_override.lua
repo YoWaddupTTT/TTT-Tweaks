@@ -1,3 +1,7 @@
+-- Prop Disguiser Holdtype Override
+-- This ensures the headcrab launcher uses the "pistol" holdtype animation
+-- Credit: Snuffles the Fox
+
 -- Wait until the game is fully initialized
 hook.Add("InitPostEntity", "PropDisguiser_HoldTypeOverride", function()
     -- Small delay to ensure the weapon is fully registered

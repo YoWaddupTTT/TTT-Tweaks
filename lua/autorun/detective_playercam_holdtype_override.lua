@@ -1,3 +1,7 @@
+-- Detective Playercam Holdtype Override
+-- This ensures the detective playercam uses the "revolver" holdtype animation instead of pistol
+-- Credit: Snuffles the Fox
+
 -- Wait until the game is fully initialized
 hook.Add("InitPostEntity", "DetectivePlayercam_HoldTypeOverride", function()
     -- Small delay to ensure the weapon is fully registered

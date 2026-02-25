@@ -1,3 +1,7 @@
+-- TITLE
+-- This prevents the homerun bat from damaging & launching other players if the user is on TEAM_JESTER, or if they are trying to hit the Marker while marked.
+-- Credit: Snuffles the Fox & Spanospy
+
 if CLIENT then
 	sound.Add{
 		name="Bat.Squeak",

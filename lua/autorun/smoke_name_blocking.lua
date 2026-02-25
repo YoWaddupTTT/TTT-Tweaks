@@ -4,6 +4,7 @@ if SERVER then return end
 
 -- Smoke Grenade Name Blocking
 -- Prevents seeing player names through smoke grenades
+-- Credit: Snuffles the Fox
 
 local traceoffset = 32
 local balancingsizefactor = 1.4

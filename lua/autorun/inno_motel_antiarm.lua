@@ -1,5 +1,6 @@
 -- Hook to handle ttt_innocentmotel_v1 rearm script special case
 -- Forces replacespawns to 0 and ignores all ttt_playerspawn entries
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Wait for TTT to fully initialize before hooking

@@ -1,3 +1,7 @@
+-- Doppelganger Display Fix
+-- Ensures that the created doppelganger matches the exact appearance of the user - including custom TargetID stuff.
+-- Credit: Snuffles the Fox
+
 hook.Add("TTTPrepareRound", "DoppelgangerHUDFix", function()
 -- hook.Add("InitPostEntity", "DoppelgangerHUDFix", function()
     if CLIENT and TTT2 then

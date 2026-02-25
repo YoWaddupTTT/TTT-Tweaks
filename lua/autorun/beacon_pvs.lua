@@ -2,6 +2,7 @@ if CLIENT then return end
 
 -- Beacon PVS Enhancement
 -- Adds PVS points to players detected by beacons to keep them loaded on all clients
+-- Credit: Snuffles the Fox
 
 hook.Add("SetupPlayerVisibility", "Beacon_PVS_AddPoints", function(viewer, viewEntity)
     if not IsValid(viewer) or not viewer:IsPlayer() then return end

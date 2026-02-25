@@ -1,3 +1,7 @@
+-- S&W 500 Holdtype Override
+-- This ensures the S&W 500 uses the "revolver" holdtype animation instead of pistol
+-- Credit: Snuffles the Fox
+
 -- Wait until the game is fully initialized
 hook.Add("InitPostEntity", "S&W_HoldTypeOverride", function()
     -- Small delay to ensure the weapon is fully registered

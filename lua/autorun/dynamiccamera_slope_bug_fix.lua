@@ -1,5 +1,6 @@
 -- Dynamic Camera Hull - Slope Bug Fix
 -- This addon fixes issues with slopes when using the Dynamic Camera Hull addon
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Fix for the server-side net.Send parameter bug

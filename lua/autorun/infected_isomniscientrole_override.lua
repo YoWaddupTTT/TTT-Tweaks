@@ -1,5 +1,6 @@
 -- Infected isOmniscientRole Override
 -- This sets the isOmniscientRole flag for the infected role to true
+-- Credit: Snuffles the Fox
 
 if SERVER then
     hook.Add("InitPostEntity", "Infected_isOmniscientRole_Override", function()

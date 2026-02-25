@@ -1,5 +1,6 @@
 -- Extinguisher PAP Jarate Buff
 -- This script makes the fire extinguisher clean off PAP viral jarate and provide immunity
+-- Credit: Snuffles the Fox
 
 -- Create console command for overlay toggle
 local jarate_overlay_enabled = CreateConVar("ttt_jarate_overlay", "1", {FCVAR_ARCHIVE, FCVAR_USERINFO}, "Enable/disable jarate screen overlay effect (1 = enabled, 0 = disabled)")

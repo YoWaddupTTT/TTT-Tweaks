@@ -1,5 +1,6 @@
 -- Force Shield Weapon Override
 -- Sets SWEP.Slot = 3, SWEP.Kind = WEAPON_NADE, SWEP.AutoSpawnable = true
+-- Credit: Snuffles the Fox
 
 local function PatchForceShieldWeapon(wep)
     if not IsValid(wep) then return end

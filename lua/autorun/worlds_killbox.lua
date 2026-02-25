@@ -1,4 +1,6 @@
 -- Killbox for ttt_worlds map
+-- Credit: Snuffles the Fox
+
 if SERVER then
 	hook.Add("Initialize", "TTT_Worlds_Killbox", function()
 		if game.GetMap() ~= "ttt_worlds" then return end

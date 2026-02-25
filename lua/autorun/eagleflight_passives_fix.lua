@@ -1,5 +1,6 @@
 -- Eagle Flight Gun Passive Abilities Fix
 -- This file fixes the issue where passive abilities are removed after using the Eagle Flight gun
+-- Credit: Snuffles the Fox
 
 if SERVER then -- Only run on server
 

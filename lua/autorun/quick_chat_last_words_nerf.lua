@@ -1,5 +1,6 @@
 -- Prevents last words from showing in chat if the message is a radio command
 -- This prevents abuse of revealing traitors through quick chat right before death
+-- Credit: Snuffles the Fox
 
 if CLIENT then
     local our_last_chat = ""

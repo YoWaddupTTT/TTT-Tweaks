@@ -1,6 +1,7 @@
 -- Flare Gun fire damage attribution fix
 -- This ensures that fire damage from the Flare Gun is properly attributed to the shooter
 -- and prevents damage if shooter is a Jester
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Hook into the damage event to modify fire damage attribution

@@ -1,5 +1,6 @@
 -- Banana Health Fix
 -- This fixes the banana reducing health when player has above max health
+-- Credit: Snuffles the Fox
 
 -- Helper function to apply the fix to a weapon
 local function ApplyBananaFix(weaponTable)

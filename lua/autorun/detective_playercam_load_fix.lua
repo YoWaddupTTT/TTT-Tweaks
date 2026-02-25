@@ -1,5 +1,6 @@
 -- Detective Playercam Network Visibility Fix
 -- This ensures players being viewed through the Detective's camera stay loaded
+-- Credit: Snuffles the Fox
 
 if SERVER then
     

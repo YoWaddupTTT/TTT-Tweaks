@@ -1,4 +1,5 @@
 -- Spawns a Christmas tree with presents on round start (December only)
+-- Credit: Snuffles the Fox
 
 --[[
 if CLIENT then

@@ -1,3 +1,7 @@
+-- Icon Overrides
+-- Makes the shop icons of various guns more readable and distinguished
+-- Credit: Snuffles the Fox
+
 hook.Add("Initialize", "CatgunIconOverride", function()
 	timer.Simple(0, function()
 		local catgun = weapons.GetStored("weapon_catgun")

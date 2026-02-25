@@ -1,5 +1,6 @@
 -- Fart Grenade Attribution Fix
 -- This fixes the issue where players killed by the fart grenade show as killed by world
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Define the sound variables locally in our script

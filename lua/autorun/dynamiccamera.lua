@@ -1,3 +1,7 @@
+-- Dynamic Camera
+-- Fixes camera stuff relating to playermodel height changes?
+-- Credit: Snuffles the Fox (?)
+
 AddCSLuaFile("DynamicCamera.lua")
 
 CreateConVar("dynamiccamerahull_debug", 0, FCVAR_ARCHIVE, "Minimum height for playermodels", 0, 1)

@@ -1,3 +1,7 @@
+-- DNA Kill Icon
+-- Adds a DNA icon to the killer info victims receive, if they were killed while the killer had their DNA.
+-- Credit: Snuffles the Fox
+
 if SERVER then
     -- Network string to send DNA info
     util.AddNetworkString("tttRsDeathNotifyDNA")

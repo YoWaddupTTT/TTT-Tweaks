@@ -1,5 +1,6 @@
 -- R8 Revolver + Speed Cola Compatibility Fix
 -- Fixes primary fire and reload issues when Speed Cola perk is active
+-- Credit: Snuffles the Fox
 
 if SERVER then
     AddCSLuaFile()

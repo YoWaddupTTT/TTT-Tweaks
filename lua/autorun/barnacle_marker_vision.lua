@@ -1,5 +1,6 @@
 -- Barnacle Marker Vision Integration
 -- Replaces the barnacle's custom warning system with TTT2's marker vision
+-- Credit: Snuffles the Fox
 
 if SERVER then
     AddCSLuaFile()

@@ -1,5 +1,6 @@
 -- Lethal Company Mine Marker Vision Integration
 -- Adds TTT2 marker vision to Lethal Company landmines
+-- Credit: Snuffles the Fox
 
 if SERVER then
     AddCSLuaFile()

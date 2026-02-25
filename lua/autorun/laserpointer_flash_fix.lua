@@ -1,5 +1,6 @@
 -- Laser Pointer Flash Fix
 -- Replaces the white flash effect with a freeze-frame effect that's safer for people with epilepsy
+-- Credit: Snuffles the Fox
 
 if CLIENT then
     -- Variables to store our screenshot and effect state

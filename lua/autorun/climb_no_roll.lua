@@ -5,6 +5,7 @@ if SERVER then return end
 -- Climb Item - Disable Camera Roll
 -- Keeps the sound, velocity boost, and fall damage immunity
 -- Only removes the camera rolling effect when landing
+-- Credit: Snuffles the Fox
 
 hook.Add("Initialize", "Climb_DisableCameraRoll", function()
     net.Receive("ClimbRoll", function()

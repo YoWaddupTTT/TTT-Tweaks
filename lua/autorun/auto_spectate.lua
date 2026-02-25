@@ -1,5 +1,6 @@
 -- Auto Spectate Killer System
 -- Console command: ttt_auto_spectate_killer (0 = off, 1 = on) - Per Player
+-- Credit: Snuffles the Fox
 
 if SERVER then
 	util.AddNetworkString("TTT_AutoSpectateKiller_Toggle")

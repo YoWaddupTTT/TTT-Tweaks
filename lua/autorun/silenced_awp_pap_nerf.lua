@@ -1,3 +1,7 @@
+-- Silenced AWP PAP Nerf
+-- Makes the Silenced AWP PAP upgrade use the AWP's unsilenced sound rather than the generic PAP shoot sound. 
+-- Credit: Snuffles the Fox
+
 -- Hook into weapon firing to override the sound for the unsilenced AWP upgrade
 hook.Add("EntityFireBullets", "TTTPAP_UnsilencedAWP_SoundOverride", function(entity, bulletInfo)
     -- Check if entity is a weapon and has been Pack-a-Punched with unsilenced_awp

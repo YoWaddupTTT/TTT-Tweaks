@@ -1,5 +1,6 @@
--- Kamehameha damage attribution fix
+-- Kamehameha Damage Attribution Fix
 -- This ensures that AOE damage from the Kamehameha blast is properly attributed to the shooter
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Wait for all weapons to be loaded

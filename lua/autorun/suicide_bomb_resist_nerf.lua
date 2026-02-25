@@ -1,5 +1,6 @@
 -- Ensures suicide bomb users always die to their own explosion
 -- even if they have explosion resistance
+-- Credit: Snuffles the Fox
 
 if SERVER then
     local suicideBombUsers = {}

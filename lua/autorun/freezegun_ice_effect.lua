@@ -1,5 +1,6 @@
 -- Freezegun Ice Effect Integration
 -- Makes the freezegun apply the same ice effect as the ice grenade
+-- Credit: Snuffles the Fox
 
 if SERVER then
     util.AddNetworkString("Freezegun_IceEffect")

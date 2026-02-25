@@ -4,6 +4,7 @@ if CLIENT then return end
 
 -- CIA Glow PVS Enhancement
 -- Adds PVS points to players with glow to keep them loaded on the client
+-- Credit: Snuffles the Fox
 
 local CIA_GLOW_PVS = {}
 

@@ -1,5 +1,6 @@
 -- Hook to replace custom player spawns with map default spawns for specific maps
 -- Keeps custom weapon/ammo spawns but rebuilds player spawn table from map entities
+-- Credit: Snuffles the Fox
 
 if SERVER then
     -- Maps that should use default player spawns instead of custom spawns

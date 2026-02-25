@@ -1,5 +1,6 @@
 -- Jackal and Sidekick isOmniscientRole Override
 -- This sets the isOmniscientRole flag for the jackal and sidekick roles to true
+-- Credit: Snuffles the Fox
 
 if SERVER then
     hook.Add("InitPostEntity", "Jackal_Sidekick_isOmniscientRole_Override", function()

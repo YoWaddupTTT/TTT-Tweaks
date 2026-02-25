@@ -1,3 +1,6 @@
+-- Various Marker fixes, improving the paint gun & marked effects.
+-- Credit: xproot
+
 if not SERVER then return end
 
 -- Wait until the server is fully initialized to ensure we override existing entities
