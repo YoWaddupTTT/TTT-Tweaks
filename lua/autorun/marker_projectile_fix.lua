@@ -27,11 +27,6 @@ hook.Add("OnEntityCreated", "TTT2MarkerProjectileSpeed", function(ent)
         ent:SetCustomCollisionCheck(true)
         ent.Touch = function(slf, other) end
 
-        local collide = ent.PhysicsCollide
-        ent.PhysicsCollide = function(slf, data, phy)
-            collide(slf, data, phy)
-        end
-
         local update = ent.PhysicsUpdate
         ent.PhysicsUpdate = function(slf, phys)
             if not slf.speedUpdate then
