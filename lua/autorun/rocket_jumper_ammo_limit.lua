@@ -26,6 +26,7 @@ local CVAR_FLAGS = {FCVAR_NOTIFY, FCVAR_ARCHIVE, FCVAR_REPLICATED}
 local RJ_BASE_AMMO = CreateConVar("ttt_rocket_jumper_ammo", 60, CVAR_FLAGS, "How much ammo the Jumper starts with.", 1, 1000)
 local RJ_CVAR_UPDATE_MSG = "TTT_Tweaks_RocketJumperAmmoCvarUpdate"
 
+local RJ_HIT_GROUND_HOOK = "market_gardener__DropMeleeOnFall" -- original addon
 local RJ_CLASSNAME = "weapon_ttt_rocket_jumper"
 
 function RJ_ApplyChanges(firstTimeSetup)
@@ -66,6 +67,31 @@ function RJ_ApplyChanges(firstTimeSetup)
             label = "Base ammo",
             min = 1, max = 1000, decimal = 0
         })
+    end
+
+    -- fix for the bug where landing does not reset the player's "Jumper" state if not holding the weapons
+    hook.Remove("OnPlayerHitGround", RJ_HIT_GROUND_HOOK)
+
+    if SERVER then
+        hook.Add("OnPlayerHitGround", RJ_HIT_GROUND_HOOK, function(ply, inWater, onFloater, speed)
+            if not SERVER or not ply:IsPlayer() then return end
+
+            for _, wep in ipairs(ply:GetWeapons()) do
+                if wep:GetClass() == RJ_CLASSNAME then
+                    if not wep:GetIsJumper() then
+                        wep:BecomeJumper()
+                    end
+
+                    return
+                end
+            end
+        end)
+
+        function swep:PreDrop() -- also reset on drop :)
+            if not self:GetIsJumper() then
+                self:BecomeJumper()
+            end
+        end
     end
 end
 
