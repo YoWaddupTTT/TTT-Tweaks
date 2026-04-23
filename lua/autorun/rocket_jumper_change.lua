@@ -25,10 +25,13 @@ SOFTWARE.
 local CVAR_FLAGS = {FCVAR_NOTIFY, FCVAR_ARCHIVE, FCVAR_REPLICATED}
 local RJ_USES_AMMO = CreateConVar("ttt_rocket_jumper_limit_ammo", 0, CVAR_FLAGS, "Whether the Jumper has limited ammo.", 0, 1)
 local RJ_BASE_AMMO = CreateConVar("ttt_rocket_jumper_ammo", 60, CVAR_FLAGS, "How much ammo the Jumper starts with.", 1, 1000)
+local PHD_COOLDOWN = CreateConVar("ttt_phd_explosion_cooldown", 2, CVAR_FLAGS, "Cooldown before PHD explosions can trigger again.", 0, 15)
 local RJ_CVAR_UPDATE_MSG = "TTT_Tweaks_RocketJumperAmmoCvarUpdate"
 
 local RJ_HIT_GROUND_HOOK = "market_gardener__DropMeleeOnFall" -- original addon
+local PHD_FALL_DMG_HOOK = "TTTPHDRemoveFallDamage" -- original addon
 local RJ_CLASSNAME = "weapon_ttt_rocket_jumper"
+local PHD_ITEM_CLASSNAME = "item_ttt_phd"
 
 function RJ_ApplyChanges(firstTimeSetup)
     print("[TTT-Tweaks] Applying Rocket Jumper changes; first time setup:", firstTimeSetup)
@@ -127,6 +130,44 @@ function RJ_ApplyChanges(firstTimeSetup)
     end
 end
 
+function PHD_ApplyChanges()
+    print("[TTT-Tweaks] Applying PHD changes (cooldown)")
+    local item = items.GetStored(PHD_ITEM_CLASSNAME)
+
+    phdFallDmgHook = phdFallDmgHook or hook.GetTable()["EntityTakeDamage"][PHD_FALL_DMG_HOOK]
+    if not phdFallDmgHook then return end
+
+    hook.Add("EntityTakeDamage", PHD_FALL_DMG_HOOK, function(target, dmginfo)
+        if not target:IsPlayer() then return end
+
+        if dmginfo:IsFallDamage() then
+            local curTime = CurTime()
+            local timeSinceLast = target._phdCDLastTime and (curTime-target._phdCDLastTime) or 999
+            local timeRemaining = PHD_COOLDOWN:GetFloat() - timeSinceLast
+
+            if timeRemaining > 0 then
+                print("[TTT-Tweaks] PHD explosion blocked due to cooldown ("..timeRemaining.."s remains)")
+                return true
+            else
+                target._phdCDLastTime = curTime
+            end
+        end
+
+        return phdFallDmgHook(target, dmginfo)
+    end)
+
+    function item:AddToSettingsMenu(parent)
+        local formTweaks = vgui.CreateTTT2Form(parent, "TTT Tweaks")
+
+        formTweaks:MakeSlider({
+            serverConvar = "ttt_phd_explosion_cooldown",
+            label = "Minimum cooldown between PHD explosions (s)",
+            min = 0, max = 15
+        })
+    end
+end
+
+
 
 if SERVER then
     util.AddNetworkString(RJ_CVAR_UPDATE_MSG)
@@ -152,4 +193,5 @@ end
 -- initial setup
 hook.Add("InitPostEntity", "TTT2RocketJumperAmmoLimit", function()
     RJ_ApplyChanges(true)
+    PHD_ApplyChanges()
 end)
