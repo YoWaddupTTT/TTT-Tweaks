@@ -55,6 +55,17 @@ hook.Add("InitPostEntity", "TTT2PositionSwapperFix", function()
         end
     end
 
+    local OGPosSwapperSecondary = swep.SecondaryAttack
+    swep.SecondaryAttack = function(self)
+        if SERVER then
+            local owner = self:GetOwner()
+
+            owner:LagCompensation(true)
+            OGPosSwapperSecondary(self)
+            owner:LagCompensation(false)
+        end
+    end
+
     swep.Initialize = function(self)
         if CLIENT then
             self:AddTTT2HUDHelp("Swap with target", "Select target")
