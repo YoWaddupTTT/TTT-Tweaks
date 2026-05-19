@@ -24,6 +24,7 @@ SOFTWARE.
 
 hook.Add("InitPostEntity", "TTT-Tweaks_FixManhackInvis", function()
     if SERVER then
+        print("[TTT-Tweaks] Applying Manhack invisibility glitch fix")
         local manhackWep = weapons.GetStored("weapon_controllable_manhack")
 
         if manhackWep then
@@ -31,12 +32,16 @@ hook.Add("InitPostEntity", "TTT-Tweaks_FixManhackInvis", function()
 
             manhackWep.Reload = function(self)
                 local manhack = self:GetSpawnedManhack()
+                if not IsValid(manhack) or manhack._PressedReload then return end
+                manhack._PressedReload = true
 
                 if IsValid(manhack) and manhack:GetControlActive() then
                     manhack:StopControlling()
                 end
 
-                OGManhackReload(self)
+                timer.Simple(0, function()
+                    OGManhackReload(self)
+                end)
             end
         end
     end
