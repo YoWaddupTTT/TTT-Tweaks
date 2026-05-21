@@ -1,6 +1,6 @@
 -- xproot's code
--- this should send all messages from CustomChat (that generate a PostPlayerSay to SourceTV.
--- Temporary fix before https://github.com/StyledStrike/gmod-custom-chat/issues/57 gets fixed.
+-- This should send all messages from CustomChat that generate a PostPlayerSay to SourceTV.
+-- Temporary fix until https://github.com/StyledStrike/gmod-custom-chat/issues/57 is fixed.
 
 if SERVER then
 	local function PostPlayerSay(speaker, text, teamOnly, channel, dmTarget)
