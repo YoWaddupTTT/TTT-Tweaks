@@ -28,6 +28,7 @@ SOFTWARE.
 
 if SERVER then
 	local function PostPlayerSay(speaker, text, teamOnly, channel, dmTarget)
+		if dmTarget then return end --don't send DMs to SourceTV
 		local botplayers = player.GetBots()
         if botplayers == nil and #botplayers < 1 then return end
 
