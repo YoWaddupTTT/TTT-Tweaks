@@ -36,6 +36,7 @@ local PHD_ITEM_CLASSNAME = "item_ttt_phd"
 function RJ_ApplyChanges(firstTimeSetup)
     print("[TTT-Tweaks] Applying Rocket Jumper changes; first time setup:", firstTimeSetup)
     local swep = weapons.GetStored(RJ_CLASSNAME)
+	if not swep then return end
 
     -- for idempotency
     RJ_OG_JUMPERFIRE = RJ_OG_JUMPERFIRE or swep.JumperFire
@@ -133,6 +134,7 @@ end
 function PHD_ApplyChanges()
     print("[TTT-Tweaks] Applying PHD changes (cooldown)")
     local item = items.GetStored(PHD_ITEM_CLASSNAME)
+	if not item then return end
 
     phdFallDmgHook = phdFallDmgHook or hook.GetTable()["EntityTakeDamage"][PHD_FALL_DMG_HOOK]
     if not phdFallDmgHook then return end
