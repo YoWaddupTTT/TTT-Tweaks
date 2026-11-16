@@ -1,3 +1,4 @@
+-- for general swep fixes go down
 function tweaks_fixHoldTypes()
 	-- ANY NEW FIXES: TYPE YOUR FIX HERE
 	-- If you need the weapon id, spawn a local server and type
@@ -97,10 +98,48 @@ function tweaks_forceHoldTypeOverride()
 	end
 end
 
+function tweaks_patchSWEPTable()
+	-- ANY NEW SWEP FIXES: TYPE YOUR FIX HERE
+	-- If you need the weapon id, spawn a local server and type
+	-- sv_cheats 1
+	-- sv_allowcslua 1
+	-- lua_run_cl for _,w in pairs(weapons.GetList()) do print(w.ClassName,w.PrintName) end
+	local weapon_table_fixes = {
+		["weapon_ttt_rocket_jumper"] = {
+			["AutoSwitchTo"] = false,
+			["Equip"] = function(self, ply)
+				if self.BaseClass and self.BaseClass.Equip then
+					return self.BaseClass.Equip(self, ply)
+				end
+			end,
+		},
+	}
+	
+	print("[TTT-Tweaks] SWEP Table Fixes:")
+	-- Iterate through each fix and apply it
+	for key, value in pairs(weapon_table_fixes) do
+		-- Get the stored weapon table
+		local weapon = weapons.GetStored(key)
+		
+		-- Check if the weapon exists
+		if weapon then
+			-- Override the whatevers
+			for _k, _v in pairs(value) do
+				weapon[_k] = _v
+				print("[TTT-Tweaks] SWEP Patch " .. key .. "." .. _k .. " -> " .. tostring(_v))
+			end
+		else
+			print("[TTT-Tweaks] SWEP Skip " .. key)
+		end
+	end
+end
+
 -- Wait until the game is fully initialized
 hook.Add("InitPostEntity", "TTTTweaks_HoldTypeOverride", function()
 	-- Small delay to ensure the weapons are fully registered
 	timer.Simple(1, function()
 		tweaks_fixHoldTypes()
+		tweaks_forceHoldTypeOverride()
+		tweaks_patchSWEPTable()
 	end)
 end)
